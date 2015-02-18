@@ -14,7 +14,7 @@ class: middle, center
 
 # Outline
 
-- Some history and early warnings
+- Version Control
 - Git
 - Github
 - Other stuff
@@ -25,14 +25,24 @@ class: middle, center
 # Why version control
 
 - Duh, lots of people working on the same code
-- Stores your code
-- Keeps history of **Who** did **What** and **When**!
+- Stores your code: history of **Who** did **What** and **When**!
+- Fine grained control of changes
+  - Messed up? **revert**
+  - **merge** code from different people
 - Prevents heart attacks. Developer safety net.
+- Back in the 80s we used ...
+
+---
+class: inverse, middle
+
+# rule**#1** 
+
+don't spend more time managing code than coding
+
 
 ---
 
-# Work is a flow of changes over time
-
+# Work is a flow of changes (aka commits)
 
 ![](flow-1.png)
 
@@ -56,7 +66,7 @@ class: middle, center, inverse
 # git history in one slide
 
 1. In 2005 Linus Torvalds needed a version control system for the kernel
-2. Someone wanted git to suport a workflow for [RANDOM WORKFLOW HERE]
+2. Someone wanted git to support a workflow for [RANDOM WORKFLOW HERE]
 3. Repeat step 2. for ~10 years
 
 Result: git supports lots of workflows
@@ -83,7 +93,7 @@ background-image: url(scared.jpg)
 - awesome tools for merge and migration
 - security - commits hashed and signed, if the code is tampered
   with you can tell
-- Anyone tried deployed SVN over HTTP? PITA!
+- Anyone tried deploying SVN over HTTP? PITA!
 
 ---
 
@@ -104,6 +114,7 @@ background-image: url(scared.jpg)
 ## Extra confusion because
 
 - git commit != svn commit
+- idem, git checkout
 - git pull ...
 
 ---
@@ -118,21 +129,119 @@ background-image: url(scared.jpg)
 class: middle, center, inverse
 # git intro
 
+
+---
+
+# Terminology
+
+**Commit**: is a change in one or more files, with a helpful message
+
+**Branch**: A sequence of commits. Usually each .branch[branch] matches a flow of work (e.g. bugfix, or new feature)
+
+**Remote**: Remote git .remote[server]
+
+Convention: .branch[master] is the main development branch and .remote[origin] is the default server
+where you push/fetch
+
+---
+class: middle, center
+
+# less talk, show me the real deal!
+
 ---
 background-image: url(git-flows.png)
 
 ---
-# patch mode
 
-changed a file but only want to commit some parts
+# Getting started
 
-- git add -p
+Create a new repo
+
+```
+git init
+```
+
+Clone an existing repo
+
+```
+git clone https://github.com/equalsraf/git-talk-2015.git
+```
 
 ---
-class: bottom, left
-background-image: url(cherry.jpg)
-background-size: contain
-# git cherry-pick
+
+# Commit changes
+
+Add files to the index
+
+```
+git add file.js
+```
+
+see what you are doing before committing
+
+```
+git status
+```
+
+Save index as new commit
+
+```
+git commit
+```
+
+---
+
+# Branches
+
+Create branch fix from master
+
+```
+git branch fix master
+```
+
+Switch to branch .branch[fix]
+
+```
+git checkout master
+```
+
+---
+
+# Push our code to a remote server
+
+Create a new remote called .remote[origin] (git clone does this)
+```
+git remote add origin https://equalsraf@github.com/equalsraf/git-talk-demo
+```
+
+Push the .branch[master] branch into the remote .remote[origin]
+```
+git push origin master
+```
+
+By default the remote branch will show up as .remote[origin/master]
+
+
+---
+
+# git merge
+
+Turns this
+
+![](rebase-1.png)
+
+into this
+
+![](merge-1.png)
+
+---
+
+# git merge **can fail**
+
+- e.g. two people write in the same file
+- git will try to be smart about it
+- in 1% of the cases really weird things can happen
+
 ---
 # git rebase
 
@@ -144,21 +253,45 @@ into this
 
 ![](rebase-2.png)
 
+the result is similar to merge, **but maybe not**
+
+
 ---
+class: bottom, left
+background-image: url(cherry.jpg)
+background-size: contain
+# git cherry-pick
+---
+# git cherry-pick
 
-# git merge
+Apply **individual** commits from other branches
 
-Similar to rebase, turns this
+![](pick-1.png)
 
-![](rebase-1.png)
-
-into this
-
-![](merge-1.png)
+![](pick-2.png)
 
 ---
 class: middle, center
 # for magic call **git rebase -i**
+
+---
+class: inverse, middle
+# rule#2
+Don't rewrite history, for changes you already pushed into a remote public branch
+
+---
+class: bottom, left
+background-image: url(revert.jpg)
+# git revert
+
+---
+# git add: patch mode
+
+Changed a file but only want to commit some parts
+
+```
+git add -p file
+```
 
 ---
 class: bottom, left, inverse
@@ -171,6 +304,7 @@ class: bottom, right, inverse
 background-image: url(reflog.jpg)
 background-size: contain
 # git reflog
+
 ---
 
 class: bottom, right
@@ -184,7 +318,8 @@ background-image: url(github.jpg)
 2. self promotion
 3. find what you need and DRY
 
-## Yay free tools
+---
+# Why github: Yay free tools
 
 - Git
 - Issue Tracker
@@ -200,12 +335,19 @@ background-image: url(github.jpg)
 - You fork other repos, and send [pull requests](https://github.com/neovim/neovim/pull/1927)
 
 ---
+class: inverse, middle
 
-# Third-party tools
+# rule#3
+ALWAYS create a separate branch for a new PR
+
+---
+
+# Third-party tool integration
 
 Collaboration tools
 - Mail/IRC
 - Gitter/Slack
+- Waffle.io
 
 Automatic testing/deployment
 - [Travis-ci](https://travis-ci.org/neovim/neovim) (Linux/Mac)
@@ -223,18 +365,28 @@ or code your own ...
   - less people
   - unlimited private repos (for small teams)
 - github student accounts
+- gitorious, gitlab
+- or the competition (Mercurial)
 
 ---
 
 # Things you should check out
 
 - [http://www.git-scm.com/book/en/v2](http://www.git-scm.com/book/en/v2)
+- [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
 ---
 
 # Free advice
 
 - Stay away from crappy IDE integration
-- Disable automatic code reformating
+- Disable automatic code reformatting
 - There are good Git GUIs (gitk is not!)
+- When doing cross platform development, Google for CRLF git issues
+
+---
+class: dark, middle, right
+background-image: url(guiness.jpg)
+
+# Q&A
 
 

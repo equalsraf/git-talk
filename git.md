@@ -54,7 +54,7 @@ sometimes we make mistakes!
 
 ![](flow-2.png)
 
-Now imagine this with 5, 10, 20 people
+Now imagine this with 5, 10, 20 or 200 people
 
 ---
 class: middle, center, inverse
@@ -65,11 +65,11 @@ class: middle, center, inverse
 
 # git history in one slide
 
-1. In 2005 Linus Torvalds needed a version control system for the kernel
-2. Someone wanted git to support a workflow for [RANDOM WORKFLOW HERE]
+1. In 2005 Linus Torvalds needed a version control system for the kernel - fast and safe
+2. Someone else wanted git to support a workflow for [RANDOM WORKFLOW HERE]
 3. Repeat step 2. for ~10 years
 
-Result: git supports lots of workflows
+**Result:** git supports lots of workflows
 
 ---
 class: bottom, right
@@ -193,7 +193,7 @@ git commit
 
 # Branches
 
-Create branch fix from master
+Create branch .branch[fix] from .branch[master]
 
 ```
 git branch fix master
@@ -202,8 +202,29 @@ git branch fix master
 Switch to branch .branch[fix]
 
 ```
-git checkout master
+git checkout fix
 ```
+
+---
+
+# Branches are cheap
+
+Need to star working on something just `git branch`
+
+.branch[tb-refactor]
+.branch[fix-1749]
+
+It is not unusual to have 5-10 branches in my repos.
+
+If you are lazy
+
+```
+git checkout -b <new_branch_name> <from_branch>
+```
+
+---
+class: center, middle
+# so far, all this is **local**
 
 ---
 
@@ -236,11 +257,14 @@ into this
 
 ---
 
-# git merge **can fail**
+# git merge **~~can~~ will fail**
 
 - e.g. two people write in the same file
 - git will try to be smart about it
-- in 1% of the cases really weird things can happen
+- if it can't merge, it will ask **you** to do it!
+- The definition of **you** depends on the project
+  - The original developer
+  - A maintainer along the way
 
 ---
 # git rebase
@@ -255,6 +279,15 @@ into this
 
 the result is similar to merge, **but maybe not**
 
+---
+
+# for magic call **git rebase -i**
+
+- Squash commits together
+- Remove commits
+- Alter commits
+
+Great for cleaning up a long branch
 
 ---
 class: bottom, left
@@ -271,18 +304,36 @@ Apply **individual** commits from other branches
 ![](pick-2.png)
 
 ---
-class: middle, center
-# for magic call **git rebase -i**
-
----
 class: inverse, middle
 # rule#2
 Don't rewrite history, for changes you already pushed into a remote public branch
 
 ---
-class: bottom, left
-background-image: url(revert.jpg)
+class: middle, left
+background-image: url(revert.gif)
 # git revert
+
+
+---
+background-image: url(hooks.jpg)
+class: right, middle, inverse, leftbg
+# git hooks
+
+---
+
+# .gitignore 
+
+```
+# hidden files
+.*
+# backup files
+*.bak
+# dont ignore .gitignore :D
+!.gitignore
+# Objects files
+*.class
+*.o
+```
 
 ---
 # git add: patch mode
@@ -331,8 +382,8 @@ background-image: url(github.jpg)
 
 # Pull requests
 
-- In github you can't push to other repositories
-- You fork other repos, and send [pull requests](https://github.com/neovim/neovim/pull/1927)
+- In github you can't push to other people's repositories
+- You fork their repos, and send [pull requests](https://github.com/neovim/neovim/pull/1927) with changes
 
 ---
 class: inverse, middle
@@ -344,18 +395,29 @@ ALWAYS create a separate branch for a new PR
 
 # Third-party tool integration
 
-Collaboration tools
-- Mail/IRC
+- Mail/IRC/XMPP
 - Gitter/Slack
-- Waffle.io
+- [Waffle.io](https://waffle.io/neovim/neovim)
+- Automatic deployment
+- Custom hooks, i.e. code your own
 
-Automatic testing/deployment
+---
+# Third-party tool integration
+
 - [Travis-ci](https://travis-ci.org/neovim/neovim) (Linux/Mac)
 - [Appveyor](https://ci.appveyor.com/project/equalsraf/neovim) (Windows)
 - [Coveralls.io](https://coveralls.io/r/equalsraf/chan42)
 - [Scrutinizer](https://scrutinizer-ci.com/)
+- Coverity
 
-or code your own ...
+---
+
+# Github things that don't work so well
+
+- Notifications get lost easy
+- Rebase may re-trigger notifications from 2 months ago
+- Distinction issues/PR makes it harder to find stuff
+- Issue tracker labels could be ... so much better
 
 ---
 
@@ -372,8 +434,11 @@ or code your own ...
 
 # Things you should check out
 
-- [http://www.git-scm.com/book/en/v2](http://www.git-scm.com/book/en/v2)
-- [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
+- [Git book](http://www.git-scm.com/book/en/v2)
+- [Successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [Git Koans](http://stevelosh.com/blog/2013/04/git-koans/)
+- [A better pull request](https://developer.atlassian.com/blog/2015/01/a-better-pull-request/)
+
 ---
 
 # Free advice
@@ -382,6 +447,45 @@ or code your own ...
 - Disable automatic code reformatting
 - There are good Git GUIs (gitk is not!)
 - When doing cross platform development, Google for CRLF git issues
+
+---
+class: center, middle, cover
+background-image: url(engine.jpg)
+# git: under the hood
+
+---
+# I need to know how it works inside!
+
+- Technically Git is a content based Database
+- Stores objects identified by a **hash** of their content
+- branches are just a file with a hash inside
+- If you are into FS based caches
+```
+ls -l .git/objects
+```
+
+---
+# I need to know how it works inside!
+
+The git history is a Directed Acyclic Graph
+
+![](merge-1.png)
+
+Each commit holds the hash of its parent
+
+
+```
+tree 2704b87e103fe924b84cbf1a91c80d3f01df3219
+parent 6c6dce9ca13a3b2c029fd2e362adff7b2f77f8cb
+author Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
+committer Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
+```
+
+---
+
+# Things we didn't talk about
+
+tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, stash
 
 ---
 class: dark, middle, right

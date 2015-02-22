@@ -1,6 +1,7 @@
 
-class: bottom, right
-background-image: url(git.png)
+class: middle, center, inlineimg
+
+![](git.png) ![](github.jpg)
 
 @equalsraf
 
@@ -399,7 +400,7 @@ ALWAYS create a separate branch for a new PR
 - Gitter/Slack
 - [Waffle.io](https://waffle.io/neovim/neovim)
 - Automatic deployment
-- Custom hooks, i.e. code your own
+- a lot more, or write your own
 
 ---
 # Third-party tool integration
@@ -429,6 +430,7 @@ ALWAYS create a separate branch for a new PR
 - github student accounts
 - gitorious, gitlab
 - or the competition (Mercurial)
+- git-svn (i.e. svn remotely git locally)
 
 ---
 
@@ -492,5 +494,5 @@ class: dark, middle, right
 background-image: url(guiness.jpg)
 
 # Q&A
-
+@equalsraf
 

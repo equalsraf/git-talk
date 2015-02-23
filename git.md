@@ -525,4 +525,6 @@ background-image: url(guiness.jpg)
 
 # Q&A
 @equalsraf
+bye
+
 

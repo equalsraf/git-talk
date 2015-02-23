@@ -200,7 +200,12 @@ git diff --cached
 git commit
 ```
 
-*$EDITOR* will open, karma mandates you write an informative message
+*$EDITOR* will open, karma mandates you write an informative message. Check the new
+commit with
+
+```
+git log
+```
 
 ---
 

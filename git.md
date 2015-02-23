@@ -477,6 +477,7 @@ ALWAYS create a separate branch for a new PR
 - Disable automatic code reformatting
 - There are good Git GUIs (gitk is not!)
 - When doing cross platform development, Google for CRLF git issues
+- Git sucks at storing large binary files
 
 ---
 class: center, middle, cover

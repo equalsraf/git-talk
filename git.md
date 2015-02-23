@@ -304,8 +304,9 @@ the result is similar to merge, **but maybe not**
 - Squash commits together
 - Remove commits
 - Alter commits
+- Great for cleaning up a long branch
 
-Great for cleaning up a long branch
+**Disclaimer** if you erase all your code it is your fault, not mine!
 
 ---
 class: bottom, left

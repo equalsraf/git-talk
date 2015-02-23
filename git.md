@@ -11,15 +11,6 @@ class: middle, center
 ---
 class: middle, center
 # about.you
----
-
-# Outline
-
-- Version Control
-- Git
-- Github
-- Other stuff
-- Q&A
 
 ---
 
@@ -55,7 +46,6 @@ sometimes we make mistakes!
 
 ![](flow-2.png)
 
-Now imagine this with 5, 10, 20 or 200 people
 
 ---
 class: middle, center, inverse
@@ -70,7 +60,7 @@ class: middle, center, inverse
 2. Someone else wanted git to support a workflow for [RANDOM WORKFLOW HERE]
 3. Repeat step 2. for ~10 years
 
-**Result:** git supports lots of workflows
+**Result:** git supports lots of workflows, Google git? About 1,200,000,000 results
 
 ---
 class: bottom, right
@@ -178,17 +168,39 @@ Add files to the index
 git add file.js
 ```
 
-see what you are doing before committing
+
+
+---
+
+# Commit changes (2)
+
+Watch where you step
 
 ```
 git status
 ```
 
-Save index as new commit
+To see changes that are **NOT** in the index
+
+```
+git diff
+```
+
+To see changes that **WILL BE** commited
+
+```
+git diff --cached
+```
+
+---
+
+# Commit changes - finally
 
 ```
 git commit
 ```
+
+*$EDITOR* will open, karma mandates you write an informative message
 
 ---
 
@@ -310,6 +322,10 @@ class: inverse, middle
 Don't rewrite history, for changes you already pushed into a remote public branch
 
 ---
+class: middle
+# rule#2: (...) hint: Updates were rejected because
+
+---
 class: middle, left
 background-image: url(revert.gif)
 # git revert
@@ -358,6 +374,11 @@ background-size: contain
 # git reflog
 
 ---
+class: bottom, right
+background-image: url(stash.jpg)
+# git stash
+
+---
 
 class: bottom, right
 background-image: url(github.jpg)
@@ -369,6 +390,7 @@ background-image: url(github.jpg)
 1. home to lots of open source projects
 2. self promotion
 3. find what you need and DRY
+4. Social (star, follow, etc)
 
 ---
 # Why github: Yay free tools
@@ -385,6 +407,7 @@ background-image: url(github.jpg)
 
 - In github you can't push to other people's repositories
 - You fork their repos, and send [pull requests](https://github.com/neovim/neovim/pull/1927) with changes
+- The maintainer may ask for more fixes, or for a rebase
 
 ---
 class: inverse, middle
@@ -426,7 +449,7 @@ ALWAYS create a separate branch for a new PR
 
 - there is also Bitbucket
   - less people
-  - unlimited private repos (for small teams)
+  - unlimited private repos (for 5 users)
 - github student accounts
 - gitorious, gitlab
 - or the competition (Mercurial)
@@ -487,7 +510,7 @@ committer Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
 
 # Things we didn't talk about
 
-tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, stash
+tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, filter-branche
 
 ---
 class: dark, middle, right

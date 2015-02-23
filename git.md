@@ -168,7 +168,7 @@ Add files to the index
 git add file.js
 ```
 
-
+There is also *rm*, *mv*, etc
 
 ---
 

@@ -487,7 +487,7 @@ committer Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
 
 # Things we didn't talk about
 
-tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, stash
+tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, stash, libgit2
 
 ---
 class: dark, middle, right

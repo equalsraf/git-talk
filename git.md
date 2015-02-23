@@ -57,7 +57,7 @@ class: middle, center, inverse
 # git history in one slide
 
 1. In 2005 Linus Torvalds needed a version control system for the kernel - fast and safe
-2. Someone else wanted git to support a workflow for [RANDOM WORKFLOW HERE]
+2. Someone else wanted git to support a workflow for **[RANDOM WORKFLOW HERE]**
 3. Repeat step 2. for ~10 years
 
 **Result:** git supports lots of workflows, Google git? About 1,200,000,000 results

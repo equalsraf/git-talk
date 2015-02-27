@@ -527,4 +527,9 @@ background-image: url(guiness.jpg)
 @equalsraf
 bye
 
+---
+class: middle
+
+# git clone **--depth** (...)WebKit
+
 

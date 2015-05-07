@@ -534,3 +534,7 @@ class: middle
 # git clone **--depth** (...)WebKit
 
 
+---
+class: middle
+
+# git log **--check**

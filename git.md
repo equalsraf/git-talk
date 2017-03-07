@@ -92,7 +92,7 @@ background-image: url(scared.jpg)
 
 - there are some awesome tools around it, Github, gitstats
 - **local patch management** local commits/branches
-- i.e. you don't pollute the remote repo with code that is not ready
+  - i.e. you don't pollute the remote repo with code that is not ready
 - Karma - don't commit 3k lines of code with a comment 'Does stuff'
 
 ---
@@ -155,7 +155,7 @@ git init
 Clone an existing repo
 
 ```
-git clone https://github.com/equalsraf/git-talk-2015.git
+git clone https://github.com/equalsraf/git-talk.git
 ```
 
 ---
@@ -470,6 +470,7 @@ ALWAYS create a separate branch for a new PR
 - [Git Koans](http://stevelosh.com/blog/2013/04/git-koans/)
 - [A better pull request](https://developer.atlassian.com/blog/2015/01/a-better-pull-request/)
 - [Most common git screwups/questions...](http://41j.com/blog/2015/02/common-git-screwupsquestions-solutions/)
+- [First Aid git](http://firstaidgit.io/)
 
 ---
 

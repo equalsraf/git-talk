@@ -22,7 +22,7 @@ class: middle, center
   - Messed up? **revert**
   - **merge** code from different people
 - Prevents heart attacks. Developer safety net.
-- Back in the 80s we used ...
+- Back in the 90s we used ...
 
 ---
 class: inverse, middle
@@ -60,7 +60,7 @@ class: middle, center, inverse
 2. Someone else wanted git to support a workflow for **[RANDOM WORKFLOW HERE]**
 3. Repeat step 2. for ~10 years
 
-**Result:** git supports lots of workflows, Google git? About 1,200,000,000 results
+**Result:** git supports lots of workflows, Google git? About 240.000.000 results
 
 ---
 class: bottom, right
@@ -70,7 +70,7 @@ background-image: url(scared.jpg)
 
 # Keep calm and Don't be a wuss
 
-- git has 125 commands (or 38 depending how you count)
+- git has ~200 commands (or 78 depending how you count)
 - **I know** 26 well
 - I never use them all in the same project
 - New users can survive with <12

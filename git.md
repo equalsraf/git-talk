@@ -41,7 +41,6 @@ don't spend more time managing code than coding
 sometimes we make mistakes!
 
 ---
-# Work in multiple things at the same time
 
 
 ![](flow-2.png)
@@ -58,12 +57,13 @@ class: middle, center, inverse
 
 1. In 2005 Linus Torvalds needed a version control system for the kernel - fast and safe
 2. Someone else wanted git to support a workflow for **[RANDOM WORKFLOW HERE]**
-3. Repeat step 2. for ~10 years
+3. Repeat step 2. for >10 years
 
 **Result:** git supports lots of workflows, Google git? About 240.000.000 results
 
 ---
 class: bottom, right
+background-size: contain
 background-image: url(scared.jpg)
 ## scary for new users
 ---
@@ -90,7 +90,7 @@ background-image: url(scared.jpg)
 
 # Why developers want git?
 
-- there are some awesome tools around it, Github, gitstats
+- Awesome tools built around it, Github, gitstats
 - **local patch management** local commits/branches
   - i.e. you don't pollute the remote repo with code that is not ready
 - Karma - don't commit 3k lines of code with a comment 'Does stuff'
@@ -140,6 +140,7 @@ class: middle, center
 # less talk, show me the real deal!
 
 ---
+background-size: contain
 background-image: url(git-flows.png)
 
 ---
@@ -227,7 +228,7 @@ git checkout fix
 
 # Branches are cheap
 
-Need to star working on something just `git branch`
+Need to start working on something just `git branch`
 
 .branch[tb-refactor]
 .branch[fix-1749]
@@ -332,13 +333,15 @@ class: middle
 # rule#2: (...) hint: Updates were rejected because
 
 ---
-class: middle, left
+class: bottom, left
 background-image: url(revert.gif)
+background-size: contain
 # git revert
 
 
 ---
 background-image: url(hooks.jpg)
+background-size: contain
 class: right, middle, inverse, leftbg
 # git hooks
 
@@ -382,12 +385,14 @@ background-size: contain
 ---
 class: bottom, right
 background-image: url(stash.jpg)
+background-size: contain
 # git stash
 
 ---
 
 class: bottom, right
 background-image: url(github.jpg)
+background-size: contain
 
 ---
 
@@ -453,18 +458,17 @@ ALWAYS create a separate branch for a new PR
 
 # Other stuff
 
-- there is also Bitbucket
+- there is also Bitbucket/Gitlab
   - less people
-  - unlimited private repos (for 5 users)
+  - private repos
 - github student accounts
-- gitorious, gitlab
 - or the competition (Mercurial)
-- git-svn (i.e. svn remotely git locally)
 
 ---
 
 # Things you should check out
 
+- `git help`
 - [Git book](http://www.git-scm.com/book/en/v2)
 - [Successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
    - [... considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
@@ -486,6 +490,8 @@ ALWAYS create a separate branch for a new PR
 ---
 class: center, middle, cover
 background-image: url(engine.jpg)
+background-size: contain
+
 # git: under the hood
 
 ---
@@ -494,7 +500,13 @@ background-image: url(engine.jpg)
 - Technically Git is a content based Database
 - Stores objects identified by a **hash** of their content
 - branches are just a file with a hash inside
+
+```
+cat .git/refs/heads/branchname
+```
+
 - If you are into FS based caches
+
 ```
 ls -l .git/objects
 ```
@@ -512,23 +524,23 @@ Each commit holds the hash of its parent
 ```
 tree 2704b87e103fe924b84cbf1a91c80d3f01df3219
 parent 6c6dce9ca13a3b2c029fd2e362adff7b2f77f8cb
-author Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
-committer Rui Abreu Ferreira <raf-ep@gmx.com> 1424249557 +0000
+author Rui Ferreira <rui@work.pt> 1424249557 +0000
+committer Rui Ferreira <rui@work.pt> 1424249557 +0000
 ```
 
 ---
 
 # Things we didn't talk about
 
-tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --ammend, whatchanged, hosting your git server, filter-branch, libgit2
+tags, mergetool, aliases, crazy repo backups, reset, submodules, clean, how to remove remote branches, fsck, config, --amend, whatchanged, hosting your git server, filter-branch, libgit2
 
 ---
 class: dark, middle, right
 background-image: url(guiness.jpg)
+background-size: contain
 
 # Q&A
 @equalsraf
-bye
 
 ---
 class: middle

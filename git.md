@@ -467,6 +467,7 @@ ALWAYS create a separate branch for a new PR
 
 - [Git book](http://www.git-scm.com/book/en/v2)
 - [Successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+   - [... considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/)
 - [Git Koans](http://stevelosh.com/blog/2013/04/git-koans/)
 - [A better pull request](https://developer.atlassian.com/blog/2015/01/a-better-pull-request/)
 - [Most common git screwups/questions...](http://41j.com/blog/2015/02/common-git-screwupsquestions-solutions/)

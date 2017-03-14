@@ -3,8 +3,6 @@ class: middle, center, inlineimg
 
 ![](git.png)
 
-@equalsraf
-
 ---
 class: middle, center
 # about.me

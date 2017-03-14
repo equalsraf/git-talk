@@ -1,7 +1,7 @@
 
 class: middle, center, inlineimg
 
-![](git.png) ![](github.jpg)
+![](git.png)
 
 @equalsraf
 
@@ -135,13 +135,13 @@ Convention: .branch[master] is the main development branch and .remote[origin] i
 where you push/fetch
 
 ---
+background-size: contain
+background-image: url(git-flows.png)
+
+---
 class: middle, center
 
 # less talk, show me the real deal!
-
----
-background-size: contain
-background-image: url(git-flows.png)
 
 ---
 
@@ -302,12 +302,13 @@ the result is similar to merge, **but maybe not**
 
 # for magic call **git rebase -i**
 
+**Disclaimer** if you erase all your code it is your fault, not mine!
+
 - Squash commits together
 - Remove commits
 - Alter commits
 - Great for cleaning up a long branch
 
-**Disclaimer** if you erase all your code it is your fault, not mine!
 
 ---
 class: bottom, left
@@ -389,6 +390,17 @@ background-size: contain
 # git stash
 
 ---
+# git-bisect
+
+![](bisect-1.png)
+![](bisect-2.png)
+![](bisect-3.png)
+
+(...)
+
+![](bisect-4.png)
+
+---
 
 class: bottom, right
 background-image: url(github.jpg)
@@ -418,20 +430,14 @@ background-size: contain
 
 - In github you can't push to other people's repositories
 - You fork their repos, and send [pull requests](https://github.com/neovim/neovim/pull/1927) with changes
-- The maintainer may ask for more fixes, or for a rebase
-
----
-class: inverse, middle
-
-# rule#3
-ALWAYS create a separate branch for a new PR
+- The maintainer may ask for more fixes, or for a rebase. Can accept it or drop it.
 
 ---
 
 # Third-party tool integration
 
 - Mail/IRC/XMPP
-- Gitter/Slack
+- Gitter/Slack/Matrix
 - [Waffle.io](https://waffle.io/neovim/neovim)
 - Automatic deployment
 - a lot more, or write your own

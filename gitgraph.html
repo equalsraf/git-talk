@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.9.0/gitgraph.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.9.0/gitgraph.min.css" />
+
+	</head>
+	<body>
+		<canvas id="gitGraph"></canvas>
+
+		<script>
+		var gitgraph = new GitGraph({
+		  template: "blackarrow",
+		  reverseArrow: false,
+		  orientation: "horizontal",
+		  mode: "compact"
+		});
+
+		var pin = {dotColor: "red"};
+		var gray = {dotColor: "gray"};
+
+		var master = gitgraph.branch("master");
+		for (i = 0; i < 15; i++) {
+			if (i == 11) {
+				gitgraph.commit(pin);
+			} else {
+				gitgraph.commit(gray);
+			}
+		}
+
+		</script>
+	</body>
+</html>

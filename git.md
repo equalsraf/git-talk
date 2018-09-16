@@ -78,7 +78,7 @@ background-image: url(scared.jpg)
 # Why maintainers want git?
 
 - disk space efficiency
-- weird workflows, git over email, or carrier pidgin
+- weird workflows, git over email, or carrier pigeon
 - awesome tools for merge and migration
 - security - commits hashed and signed, if the code is tampered
   with you can tell
